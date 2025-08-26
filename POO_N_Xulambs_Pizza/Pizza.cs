@@ -33,6 +33,11 @@ namespace POO_N_Xulambs_Pizza
             return (quantos > 0 && quantos + _totalIngredientes <= _maximoIngredientes);
         }
 
+        /// <summary>
+        /// Adiciona ingredientes na pizza.
+        /// </summary>
+        /// <param name="quantos">Quantidade de ingredientes a serem adicionados na pizza.</param>
+        /// <returns></returns>
         public int AdicionarIngrediente(int quantos)
         {
             if (VerificarLimite(quantos))
