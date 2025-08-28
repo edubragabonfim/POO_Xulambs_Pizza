@@ -47,16 +47,28 @@ namespace POO_N_Xulambs_Pizza
             return _totalIngredientes;
         }
 
+        /// <summary>
+        /// Retorna as informações gerais da Pizza. Como descrição, Valor de Venda e Total de ingredientes.
+        /// </summary>
+        /// <returns>Retorna uma string com a Nota de compra.</returns>
         public string EmitirCupom()
         {
             return $"{_descricao} | Valor: {ValorVenda()} | Com {_totalIngredientes} adicionais.";
         }
 
-        public double ValorAdicional()
+        /// <summary>
+        /// Cálcula o valor total dos adicionais.
+        /// </summary>
+        /// <returns>Retorna um número referente ao valor total dos adicionais.</returns>
+        private double ValorAdicional()
         {
             return _totalIngredientes * _precoAdicional;
         }
 
+        /// <summary>
+        /// Calcula o valor total da Pizza, sendo: Preço base + Adicionais.
+        /// </summary>
+        /// <returns>Retorna o valor total da pizza.</returns>
         public double ValorVenda()
         {
             return _precoBase + ValorAdicional();
