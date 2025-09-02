@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Pizza p1 = new Pizza();
+
+            p1.AdicionarIngrediente(5);
+            Console.WriteLine(p1.EmitirCupom());
         }
     }
 }

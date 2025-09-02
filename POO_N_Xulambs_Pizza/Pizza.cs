@@ -8,20 +8,23 @@ namespace POO_N_Xulambs_Pizza
 {
     class Pizza
     {
-        int _totalIngredientes;
-        int _maximoIngredientes;
-        string _descricao;
-        double _precoBase;
-        double _precoAdicional;
+        private int _totalIngredientes;
+        private string _descricao;
+        // Constantes que servem para todas as Pizzas.
+        private const int MaximoIngredientes = 8;
+        private const double PrecoBase = 29d;
+        private const double PrecoAdicional = 5d;
 
+        /// <summary>
+        /// Classe construtor
+        /// </summary>
         public Pizza()
         {
             _totalIngredientes = 0;
-            _maximoIngredientes = 8;
             _descricao = "Pizza";
-            _precoBase = 29d;
-            _precoAdicional = 5d;
         }
+
+        #region Métodos
 
         /// <summary>
         /// Método usado internamento dentro da classe para verificar se a quantidade de ingredientes que serão adicionados é permitido, dados o máximo de ingrdientes possíveiss.
@@ -30,7 +33,7 @@ namespace POO_N_Xulambs_Pizza
         /// <returns></returns>
         private bool VerificarLimite(int quantos)
         {
-            return (quantos > 0 && quantos + _totalIngredientes <= _maximoIngredientes);
+            return (quantos > 0 && quantos + _totalIngredientes <= MaximoIngredientes);
         }
 
         /// <summary>
@@ -62,17 +65,19 @@ namespace POO_N_Xulambs_Pizza
         /// <returns>Retorna um número referente ao valor total dos adicionais.</returns>
         private double ValorAdicional()
         {
-            return _totalIngredientes * _precoAdicional;
+            return _totalIngredientes * PrecoAdicional;
         }
 
         /// <summary>
         /// Calcula o valor total da Pizza, sendo: Preço base + Adicionais.
         /// </summary>
         /// <returns>Retorna o valor total da pizza.</returns>
-        public double ValorVenda()
+        private double ValorVenda()
         {
-            return _precoBase + ValorAdicional();
+            return PrecoBase + ValorAdicional();
         }
+
+        #endregion
 
     }
 }
