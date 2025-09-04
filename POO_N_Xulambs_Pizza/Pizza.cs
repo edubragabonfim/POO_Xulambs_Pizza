@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POO_N_Xulambs_Pizza
 {
-    class Pizza
+    public class Pizza
     {
         private int _totalIngredientes;
         private string _descricao;
@@ -16,7 +16,7 @@ namespace POO_N_Xulambs_Pizza
         private const double PrecoAdicional = 5d;
 
         /// <summary>
-        /// Classe construtor
+        /// Construtor da classe.
         /// </summary>
         public Pizza()
         {
@@ -72,7 +72,7 @@ namespace POO_N_Xulambs_Pizza
         /// Calcula o valor total da Pizza, sendo: Preço base + Adicionais.
         /// </summary>
         /// <returns>Retorna o valor total da pizza.</returns>
-        private double ValorVenda()
+        public double ValorVenda()
         {
             return PrecoBase + ValorAdicional();
         }
