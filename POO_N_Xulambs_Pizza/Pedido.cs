@@ -85,8 +85,17 @@ namespace XulambsFoods_2025_1.src
         /// <returns>String uma descrição do pedido.</returns>
         public string Relatorio()
         {
-            string status = _aberto ? "Aberto" : "Fechado";
-            return $"Pedido {_idPedido} - Quantidade de Pizzas {_pizzas.Count} | Status Pedido: {status} | Valor total: {PrecoAPagar():C2}";
+            //string status = _aberto ? "Aberto" : "Fechado";
+            //return $"Pedido {_idPedido} - Quantidade de Pizzas {_pizzas.Count} | Status Pedido: {status} | Valor total: {PrecoAPagar():C2}";
+
+            StringBuilder relat = new StringBuilder("===============================\n" + "Pedido nº " + _idPedido + " - " + _data + "\n");
+            foreach(Pizza p in _pizzas)
+            {
+                relat.AppendLine(p.EmitirCupom());
+            }
+            relat.AppendLine($"Total a Pagar: {PrecoAPagar():C2} \n");
+            return relat.ToString();
+        
         }
 
         #endregion
